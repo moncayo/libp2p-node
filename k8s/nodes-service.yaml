@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: libp2p-service
+spec:
+  selector:
+    app: libp2p-nodes
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 5000
+  clusterIP: None  # Headless service for DNS-based service discovery

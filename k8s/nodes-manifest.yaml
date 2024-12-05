@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: libp2p-nodes
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: libp2p-nodes
+  template:
+    metadata:
+      labels:
+        app: libp2p-nodes
+    spec:
+      containers:
+        - name: libp2p-node
+          image: libp2p-node
+          imagePullPolicy: Never
